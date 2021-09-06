@@ -8,11 +8,10 @@ const Footer = () => {
 
   return (
     <View style={[styles.container, { width }]}>
-      <AntDesign name="github" size={24} color="black" />
-      <AntDesign name="linkedin-square" size={24} color="black" />
-      <AntDesign name="codepen-circle" size={24} color="black" />
-      <AntDesign name="link" size={24} color="black" />
-      {/* <Ionicons name="md-checkmark-circle" size={32} color="green" /> */}
+      <AntDesign style={styles.links} name="github" size={24} color="black">Github</AntDesign>
+      <AntDesign style={styles.links} name="linkedin-square" size={24} color="black">Linkedin</AntDesign>
+      <AntDesign style={styles.links} name="codepen-circle" size={24} color="black">Codepen</AntDesign>
+      <AntDesign style={styles.links} name="link" size={24} color="black">Personal Website</AntDesign>
     </View>
   );
 };
@@ -23,6 +22,11 @@ const styles = StyleSheet.create({
     padding: 30,
     backgroundColor: "yellow",
   },
+  links: {
+    fontSize: 25,
+    fontWeight: 600,
+    padding: 10,
+  }
 });
 
 export default Footer;
