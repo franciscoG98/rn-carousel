@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import TabOneScreen from './views/tabOne';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>hola munod en rn</Text>
+      <TabOneScreen />
       <StatusBar style="auto" />
     </View>
   );
@@ -14,7 +15,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#faa',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -28,16 +28,15 @@ or
 ```
 yarn start
 ```
+ -->
+## Documentation
 
-## Documentation -->
- ## Scripts
-Open your prefered terminal and:
+[hola](https://reactnative.dev/docs/environment-setup#:~:text=Running%20your%20React%20Native%20application,scanner%20of%20the%20Camera%20app.)
 
-```
-- cd rn-carousel
-- yarn start # you can open iOS, Android, or web from here, or run them directly with the commands below.
-- yarn android
-- yarn ios # requires an iOS device or macOS for access to an iOS simulator
-- yarn web
-```
+https://docs.expo.dev/
 
+https://reactnative.dev/docs/intro-react#:~:text=React%20and%20React%20Native%20use,can%20use%20variables%20inside%20it.
+
+https://reactnative.dev/docs/button
+
+https://reactnative.dev/docs/slider
