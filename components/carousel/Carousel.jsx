@@ -2,45 +2,58 @@ import React, { useState, useEffect } from "react";
 import { Button, Image, Text, StyleSheet, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import slides from "../../helpers/slides";
+import Slider from '../../helpers/slider'
 
-console.log("slides:\n", slides);
+// console.log("slides en carousel:\n", slides);
 
 const Carousel = () => {
-  const [slider, setSlider] = useState(0);
+
+
+  const initialImage = {
+    image : require("../../assets/landscapes/arroyo2.jpg"),
+    name: 'arroyo',
+  }
+
+  const [sliderNumb, setSliderNumb] = useState(0);
+  // const [loading, setLoading] = useState(false)
+  const [image, setImage] = useState(initialImage)
+
 
   const next = () => {
-    console.log(`curr state: ${slider}`);
-    slider === 0 && setSlider(1);
-    slider === 1 && setSlider(2);
-    slider === 2 && setSlider(3);
-    slider === 3 && setSlider(4);
-    slider === 4 && setSlider(5);
-    slider === 5 && setSlider(6);
-    slider === 6 && setSlider(7);
-    slider === 7 && setSlider(0);
+    // setLoading(true)
+    console.log(`nexttttt curr state: ${sliderNumb}`);
+    sliderNumb === 0 && setSliderNumb(1);
+    sliderNumb === 1 && setSliderNumb(2);
+    sliderNumb === 2 && setSliderNumb(3);
+    sliderNumb === 3 && setSliderNumb(4);
+    sliderNumb === 4 && setSliderNumb(5);
+    sliderNumb === 5 && setSliderNumb(6);
+    sliderNumb === 6 && setSliderNumb(7);
+    sliderNumb === 7 && setSliderNumb(0);
+    // setLoading(false)
   };
 
   const prev = () => {
-    console.log(`curr state: ${slider}`);
-    console.log(`prevvvvv`);
-
-    slider === 0 && setSlider(7);
-    slider === 1 && setSlider(0);
-    slider === 2 && setSlider(1);
-    slider === 3 && setSlider(2);
-    slider === 4 && setSlider(3);
-    slider === 5 && setSlider(4);
-    slider === 6 && setSlider(5);
-    slider === 7 && setSlider(6);
+    console.log(`prevvvvv curr state: ${sliderNumb}`);
+    sliderNumb === 0 && setSliderNumb(7);
+    sliderNumb === 1 && setSliderNumb(0);
+    sliderNumb === 2 && setSliderNumb(1);
+    sliderNumb === 3 && setSliderNumb(2);
+    sliderNumb === 4 && setSliderNumb(3);
+    sliderNumb === 5 && setSliderNumb(4);
+    sliderNumb === 6 && setSliderNumb(5);
+    sliderNumb === 7 && setSliderNumb(6);
   };
 
   useEffect(() => {
     console.log("useEffect");
-  }, [slider]);
+  }, [sliderNumb, image]);
 
-  const handleSlider = () => {
-    console.log("click");
-    next();
+  const handleSlider = (e) => {
+    e.preventDefault()
+    console.log('hanbdle slider', e.target)
+    e.target.name === 'next' && next();
+    e.target.name === 'prev' && prev();
   };
 
   return (
@@ -51,6 +64,7 @@ const Carousel = () => {
       <AntDesign
         style={styles.arrowR}
         onPress={() => next()}
+          // onPress={(e) => handleSlider(e)}
         name="arrowright"
         size={24}
         color="black"
@@ -58,82 +72,12 @@ const Carousel = () => {
       <AntDesign
         style={styles.arrowL}
         name="arrowleft"
-        onPress={() => prev()}
+        // onPress={() => prev()}
+        // onPress={(e) => handleSlider(e)}
         size={24}
         color="black"
       />
-      {slider === 0 && (
-        <View>
-          <Text>{slider}</Text>
-          <Image
-            style={styles.image}
-            source={require("../../assets/landscapes/arroyo.jpg")}
-          />
-        </View>
-      )}
-      {slider === 1 && (
-        <View>
-          <Text>{slider}</Text>
-          <Image
-            style={styles.image}
-            source={require("../../assets/landscapes/arroyo2.jpg")}
-          />
-        </View>
-      )}
-      {slider === 2 && (
-        <View>
-          <Text>{slider}</Text>
-          <Image
-            style={styles.image}
-            source={require("../../assets/landscapes/canchita-de-futbol.jpg")}
-          />
-        </View>
-      )}
-      {slider === 3 && (
-        <View>
-          <Text>{slider}</Text>
-          <Image
-            style={styles.image}
-            source={require("../../assets/landscapes/jakob.jpg")}
-          />
-        </View>
-      )}
-      {slider === 4 && (
-        <View>
-          <Text>{slider}</Text>
-          <Image
-            style={styles.image}
-            source={require("../../assets/landscapes/jakob1.jpg")}
-          />
-        </View>
-      )}
-      {slider === 5 && (
-        <View>
-          <Text>{slider}</Text>
-          <Image
-            style={styles.image}
-            source={require("../../assets/landscapes/lago-frey.jpg")}
-          />
-        </View>
-      )}
-      {slider === 6 && (
-        <View>
-          <Text>{slider}</Text>
-          <Image
-            style={styles.image}
-            source={require("../../assets/landscapes/mirada-del-doctor.jpg")}
-          />
-        </View>
-      )}
-      {slider === 7 && (
-        <View>
-          <Text>{slider}</Text>
-          <Image
-            style={styles.image}
-            source={require("../../assets/landscapes/paso-de-las-nubes.jpg")}
-          />
-        </View>
-      )}
+      <Slider slides={slides} slider={sliderNumb} setSliderNumb={setSliderNumb} image={image} setImage={setImage} />
     </View>
   );
 };
@@ -157,7 +101,6 @@ const styles = StyleSheet.create({
     // margin:'5px',
     resizeMode: "cover",
     // width: Dimensions.get('screen').width,
-    // zIndex: 3,
     width: 300,
   },
   arrowR:{

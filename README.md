@@ -1,5 +1,19 @@
 # React Native Carousel 
 
+
+
+
+
+tuto:
+
+https://www.youtube.com/watch?v=r2NJJye0XnM
+
+
+
+
+
+
+
 Well, this is the 3rd time I started this project, and hopefully the last.
 
 This app was requested for a challenge, the requirements are:
@@ -8,7 +22,7 @@ This app was requested for a challenge, the requirements are:
 
 I'm using images I've taken during severals adventures with my friends in the Patagonian mountain range (south side of the Andes mountains)
 
-<!-- ## Scripts
+## Scripts
 Open your prefered terminal and:
 
 - Clone the repo
@@ -28,8 +42,8 @@ or
 ```
 yarn start
 ```
- -->
-## Documentation
+
+<!-- ## Documentation
 
 [hola](https://reactnative.dev/docs/environment-setup#:~:text=Running%20your%20React%20Native%20application,scanner%20of%20the%20Camera%20app.)
 
@@ -39,4 +53,4 @@ https://reactnative.dev/docs/intro-react#:~:text=React%20and%20React%20Native%20
 
 https://reactnative.dev/docs/button
 
-https://reactnative.dev/docs/slider
+https://reactnative.dev/docs/slider -->
